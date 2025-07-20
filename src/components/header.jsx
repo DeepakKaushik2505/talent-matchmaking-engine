@@ -1,11 +1,8 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { PenBox } from "lucide-react";
 
 const Header = () => {
-  // Removed Clerk state and hooks
-
   return (
     <>
       <nav className="py-4 flex justify-between items-center">
@@ -19,13 +16,11 @@ const Header = () => {
             Login
           </Button>
 
-          {/* Removed user-based buttons and UserButton */}
-
-          {/* Example static Post a Job button */}
-          <Link to="/post-job">
+          {/* Updated to redirect to add-talent page */}
+          <Link to="/add-talent">
             <Button variant="destructive" className="rounded-full">
               <PenBox size={20} className="mr-2" />
-              Post a Job
+              Post Talent
             </Button>
           </Link>
         </div>

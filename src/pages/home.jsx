@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 import TalentCard from "@/components/talent-card";
-import  talents  from "@/data/talents.json";
+import talents from "@/data/talents.json";
 
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
 const HomePage = () => {
@@ -15,10 +19,13 @@ const HomePage = () => {
       <section>
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight">
           Talent Matchmaking Engine <br />
-          <span className="text-indigo-600">Find the perfect creator for your project</span>
+          <span className="text-indigo-600">
+            Find the perfect creator for your project
+          </span>
         </h1>
         <p className="mt-6 text-lg text-gray-500 max-w-xl mx-auto">
-          Submit your brief and get matched with top talent, complete with match scores and rationale.
+          Submit your brief and get matched with top talent, complete with match
+          scores and rationale.
         </p>
       </section>
 
@@ -29,7 +36,7 @@ const HomePage = () => {
             Post a Brief
           </Button>
         </Link>
-        <Link to="/matches">
+        <Link to="/talent-listing">
           <Button size="lg" variant="outline-indigo">
             Find Talent
           </Button>
@@ -38,7 +45,9 @@ const HomePage = () => {
 
       {/* Talent Carousel */}
       <section className="w-full max-w-7xl">
-        <h2 className="text-2xl font-semibold mb-6 text-left">Featured Talent</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-left">
+          Featured Talent
+        </h2>
         <Carousel
           plugins={[Autoplay({ delay: 3000 })]}
           className="overflow-visible"

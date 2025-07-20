@@ -16,6 +16,7 @@ import AddTalent from "./pages/add-talent";
 // import ProtectedRoute from "./components/protected-route";
 
 import "./App.css";
+import TalentListing from "./pages/talent-listing";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/talent/:id",
         element: <TalentProfilePage />,
+      },
+      {
+        path: "/talent-listing",
+        element: <TalentListing />,
       },
       // {
       //   path: "/submit-brief",
