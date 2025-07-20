@@ -20,7 +20,7 @@ const HomePage = () => {
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight">
           Talent Matchmaking Engine <br />
           <span className="text-indigo-600">
-            Find the perfect creator for your project
+            Find top-matched creators with clear scores and rationale.
           </span>
         </h1>
         <p className="mt-6 text-lg text-gray-500 max-w-xl mx-auto">
@@ -32,12 +32,12 @@ const HomePage = () => {
       {/* CTA Buttons */}
       <section className="flex gap-8 justify-center">
         <Link to="/submit-brief">
-          <Button size="lg" variant="indigo">
+          <Button className="fancy-button" size="lg" variant="indigo">
             Post a Brief
           </Button>
         </Link>
         <Link to="/talent-listing">
-          <Button size="lg" variant="outline-indigo">
+          <Button className="fancy-button" size="lg" variant="outline-indigo">
             Find Talent
           </Button>
         </Link>
