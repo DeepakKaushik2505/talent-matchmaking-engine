@@ -1,0 +1,152 @@
+[
+  {
+    "id": "talent_1",
+    "name": "Ananya Sharma",
+    "city": "Mumbai",
+    "skills": ["Fashion", "Photography", "Portrait"],
+    "availability": "Available from 25 July 2025",
+    "budget": "₹15,000 - ₹30,000",
+    "phone": "+91 98765 43210",
+    "image": "/profiles/ananya.jpg"
+  },
+  {
+    "id": "talent_2",
+    "name": "Rohan Mehta",
+    "city": "Delhi",
+    "skills": ["Editorial", "Streetwear", "Film"],
+    "availability": "Available Now",
+    "budget": "₹10,000 - ₹20,000",
+    "phone": "+91 91234 56789",
+    "image": "/profiles/rohan.jpg"
+  },
+  {
+    "id": "talent_3",
+    "name": "Priya Verma",
+    "city": "Bangalore",
+    "skills": ["Commercial", "Beauty", "Influencer"],
+    "availability": "Available from 1 August",
+    "budget": "₹8,000 - ₹25,000",
+    "phone": "+91 99887 76655",
+    "image": "/profiles/priya.jpg"
+  },
+  {
+    "id": "talent_4",
+    "name": "Karan Singh",
+    "city": "Hyderabad",
+    "skills": ["Videography", "YouTube", "Music"],
+    "availability": "Available Now",
+    "budget": "₹20,000 - ₹50,000",
+    "phone": "+91 98456 12345",
+    "image": "/profiles/karan.jpg"
+  },
+  {
+    "id": "talent_5",
+    "name": "Meera Nair",
+    "city": "Kochi",
+    "skills": ["Travel", "Lifestyle", "Instagram"],
+    "availability": "Available from 5 August",
+    "budget": "₹12,000 - ₹18,000",
+    "phone": "+91 98111 22444",
+    "image": "/profiles/meera.jpg"
+  },
+  {
+    "id": "talent_6",
+    "name": "Arjun Reddy",
+    "city": "Chennai",
+    "skills": ["Streetwear", "Creative Direction"],
+    "availability": "Available Now",
+    "budget": "₹15,000 - ₹35,000",
+    "phone": "+91 90000 11122",
+    "image": "/profiles/arjun.jpg"
+  },
+  {
+    "id": "talent_7",
+    "name": "Sneha Kapoor",
+    "city": "Pune",
+    "skills": ["Dance", "Fashion", "Fitness"],
+    "availability": "Available mid-August",
+    "budget": "₹10,000 - ₹28,000",
+    "phone": "+91 90999 88877",
+    "image": "/profiles/sneha.jpg"
+  },
+  {
+    "id": "talent_8",
+    "name": "Nikhil Joshi",
+    "city": "Ahmedabad",
+    "skills": ["Graphic Design", "Visual Art"],
+    "availability": "Available from 30 July",
+    "budget": "₹5,000 - ₹12,000",
+    "phone": "+91 91234 55555",
+    "image": "/profiles/nikhil.jpg"
+  },
+  {
+    "id": "talent_9",
+    "name": "Tanya Iyer",
+    "city": "Jaipur",
+    "skills": ["Photography", "Modeling"],
+    "availability": "Available Now",
+    "budget": "₹9,000 - ₹19,000",
+    "phone": "+91 97777 12345",
+    "image": "/profiles/tanya.jpg"
+  },
+  {
+    "id": "talent_10",
+    "name": "Aman Malhotra",
+    "city": "Kolkata",
+    "skills": ["Scriptwriting", "Voiceover", "Theatre"],
+    "availability": "Available from 10 August",
+    "budget": "₹7,000 - ₹16,000",
+    "phone": "+91 94321 11111",
+    "image": "/profiles/aman.jpg"
+  },
+  {
+    "id": "talent_11",
+    "name": "Divya Sinha",
+    "city": "Lucknow",
+    "skills": ["Art Direction", "Creative Writing"],
+    "availability": "Available Now",
+    "budget": "₹6,000 - ₹14,000",
+    "phone": "+91 93456 22222",
+    "image": "/profiles/divya.jpg"
+  },
+  {
+    "id": "talent_12",
+    "name": "Harsh Patel",
+    "city": "Surat",
+    "skills": ["Video Editing", "Post Production"],
+    "availability": "Available Immediately",
+    "budget": "₹5,000 - ₹10,000",
+    "phone": "+91 90210 45678",
+    "image": "/profiles/harsh.jpg"
+  },
+  {
+    "id": "talent_13",
+    "name": "Pallavi Rao",
+    "city": "Nagpur",
+    "skills": ["Makeup", "Fashion Styling"],
+    "availability": "Available from 15 August",
+    "budget": "₹9,000 - ₹17,000",
+    "phone": "+91 90123 76543",
+    "image": "/profiles/pallavi.jpg"
+  },
+  {
+    "id": "talent_14",
+    "name": "Rajat Bansal",
+    "city": "Indore",
+    "skills": ["Animation", "Content Creation"],
+    "availability": "Available Now",
+    "budget": "₹8,000 - ₹15,000",
+    "phone": "+91 94444 33333",
+    "image": "/profiles/rajat.jpg"
+  },
+  {
+    "id": "talent_15",
+    "name": "Neha Kulkarni",
+    "city": "Nashik",
+    "skills": ["Influencer", "Food Blogging"],
+    "availability": "Available from 20 July",
+    "budget": "₹10,000 - ₹18,000",
+    "phone": "+91 91234 99999",
+    "image": "/profiles/neha.jpg"
+  }
+]
