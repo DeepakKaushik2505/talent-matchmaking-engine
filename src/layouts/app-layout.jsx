@@ -9,9 +9,9 @@ const AppLayout = () => {
         <Header />
         <Outlet />
       </main>
-      <div className="p-10 text-center bg-gray-800 mt-10">
-        Made with 💗 by Deepak Kaushik
-      </div>
+      <footer className="bg-gray-800 text-white py-4 text-center">
+        © {new Date().getFullYear()} Job Portal. All rights reserved.
+      </footer>
     </div>
   );
 };

@@ -12,8 +12,6 @@ import AddTalent from "./pages/add-talent";
 // import SubmitBriefPage from "./pages/submit-brief";
 // import MatchResultsPage from "./pages/match-results";
 // import FeedbackPage from "./pages/feedback";
-// import AdminDashboardPage from "./pages/admin-dashboard";
-// import ProtectedRoute from "./components/protected-route";
 
 import "./App.css";
 import TalentListing from "./pages/talent-listing";
@@ -39,24 +37,12 @@ const router = createBrowserRouter([
         element: <TalentListing />,
       },
       // {
-      //   path: "/submit-brief",
-      //   element: <SubmitBriefPage />,
-      // },
-      // {
       //   path: "/matches",
       //   element: <MatchResultsPage />,
       // },
       // {
       //   path: "/feedback/:matchId",
       //   element: <FeedbackPage />,
-      // },
-      // {
-      //   path: "/admin",
-      //   element: (
-      //     <ProtectedRoute>
-      //       <AdminDashboardPage />
-      //     </ProtectedRoute>
-      //   ),
       // },
     ],
   },

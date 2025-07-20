@@ -11,10 +11,6 @@ const Header = () => {
         </Link>
 
         <div className="flex gap-8">
-          {/* Simplified: Always show Login button for now */}
-          <Button variant="outline" onClick={() => alert("Login feature disabled")}>
-            Login
-          </Button>
 
           {/* Updated to redirect to add-talent page */}
           <Link to="/add-talent">

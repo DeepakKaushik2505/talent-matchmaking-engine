@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-import TalentCard from "@/components/talent-card";
+import HomeTalentCard from "@/components/ui/home-talents";
 import talents from "@/data/talents.json";
 
 import {
@@ -56,7 +56,7 @@ const HomePage = () => {
           <CarouselContent className="flex gap-6">
             {talents.map((talent) => (
               <CarouselItem key={talent.id} className="flex-none">
-                <TalentCard data={talent} />
+                <HomeTalentCard data={talent} />
               </CarouselItem>
             ))}
           </CarouselContent>
