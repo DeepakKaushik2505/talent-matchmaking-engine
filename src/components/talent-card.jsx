@@ -14,54 +14,52 @@ const TalentCard = ({ data }) => {
 
   return (
     <Dialog>
-      <div className="relative rounded-lg shadow-md p-3 w-full sm:w-52 flex flex-col justify-between gap-2 bg-card text-card-foreground border border-border h-auto sm:h-72 text-center">
+      <div id={`talent-card-${data.id}`} className="talent-card">
         {/* Like Button */}
         <button
+          id={`like-btn-${data.id}`}
           onClick={() => setLiked(!liked)}
-          className="absolute top-2 left-2 text-destructive z-10"
+          className="like-btn"
           aria-label="Like talent"
         >
-          {liked ? <HeartFill size={20} fill="currentColor" /> : <Heart size={20} />}
+          {liked ? <HeartFill size={20} /> : <Heart size={20} />}
         </button>
 
         {/* Content */}
-        <div className="flex-grow flex flex-col justify-center items-center gap-1 mt-3">
-          <h3 className="font-semibold text-md">{data.name}</h3>
-          <p className="text-xs text-muted-foreground">{data.city}</p>
+        <div className="talent-content">
+          <h3 className="talent-name">{data.name}</h3>
+          <p className="talent-location">{data.city}</p>
 
-          <div className="flex flex-wrap justify-center gap-1 mt-1">
+          <div className="skills-container">
             {data.skills?.map((skill) => (
-              <span
-                key={skill}
-                className="text-[10px] bg-accent text-accent-foreground rounded px-2 py-0.5"
-              >
+              <span key={skill} className="skill-tag">
                 {skill}
               </span>
             ))}
           </div>
 
-          <p className="text-xs text-muted-foreground mt-1">
-            <strong>Availability:</strong> {data.availability}
-          </p>
-          <p className="text-xs text-muted-foreground mt-1">
-            <strong>Budget:</strong> ₹{data.budget}k
-          </p>
+          <div className="talent-meta">
+            <p className="talent-availability">
+              <span className="meta-label">Availability:</span> {data.availability}
+            </p>
+            <p className="talent-budget">
+              <span className="meta-label">Budget:</span> ₹{data.budget}k
+            </p>
+          </div>
+
+          {/* Dialog Trigger */}
+          <DialogTrigger asChild>
+            <button id={`view-profile-btn-${data.id}`} className="view-profile-btn">
+              View Profile
+            </button>
+          </DialogTrigger>
         </div>
 
-        {/* Dialog Trigger */}
-        <DialogTrigger asChild>
-          <button
-            className="mt-2 bg-primary hover:bg-primary/90 text-primary-foreground py-1.5 px-3 rounded text-xs"
-          >
-            View Profile
-          </button>
-        </DialogTrigger>
+        {/* Modal Content */}
+        <DialogContent className="profile-modal">
+          <TalentProfileModal talentId={data.id} />
+        </DialogContent>
       </div>
-
-      {/* Modal Content */}
-      <DialogContent>
-        <TalentProfileModal talentId={data.id} />
-      </DialogContent>
     </Dialog>
   );
 };

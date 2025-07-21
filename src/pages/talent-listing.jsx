@@ -30,14 +30,13 @@ const TalentListing = () => {
 
   // Apply filters whenever any filter changes or talents update
   useEffect(() => {
-    let result = talents;
+    let result = [...talents];
 
-    // Apply search filter
+    // Apply search filter (name only, case-insensitive)
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       result = result.filter(talent => 
-        talent.name.toLowerCase().includes(query) ||
-        talent.skills.some(s => s.toLowerCase().includes(query))
+        talent.name.toLowerCase().includes(query)
       );
     }
 
@@ -64,7 +63,7 @@ const TalentListing = () => {
     setFilteredTalents(result);
   }, [talents, searchQuery, location, skill, budget]);
 
-  const onSearch = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
     const val = e.target["search-query"].value;
     setSearchQuery(val);
@@ -75,6 +74,8 @@ const TalentListing = () => {
     setLocation("");
     setSkill("");
     setBudget([0, 200]);
+    // Reset the search input field
+    document.getElementById("search-query").value = "";
   };
 
   return (
@@ -82,11 +83,11 @@ const TalentListing = () => {
       <h1 className="text-4xl font-bold text-center mb-8">Find Talent</h1>
 
       {/* Search Bar */}
-      <form onSubmit={onSearch} className="flex gap-2 mb-6">
+      <form onSubmit={handleSearch} className="flex gap-2 mb-6">
         <Input
+          id="search-query"
           name="search-query"
-          placeholder="Search by name or skill..."
-          defaultValue={searchQuery}
+          placeholder="Search by name..."
           className="flex-1"
         />
         <Button type="submit">Search</Button>
@@ -153,7 +154,11 @@ const TalentListing = () => {
             <TalentCard key={talent.id} data={talent} />
           ))
         ) : (
-          <p className="text-center col-span-full">No talents found. Try adjusting your filters.</p>
+          <p className="text-center col-span-full">
+            {talents.length === 0 
+              ? "No talents added yet. Add some talents first!" 
+              : "No talents match your filters. Try adjusting your search."}
+          </p>
         )}
       </div>
     </div>
