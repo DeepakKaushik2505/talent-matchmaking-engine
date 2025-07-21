@@ -168,3 +168,14 @@
   background: #0f172a;
   border: 1px solid #1e293b;
 }
+/* Add to your global CSS */
+textarea {
+  transition: all 0.3s ease;
+  border: 1px solid #2d2d3d;
+}
+
+textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  outline: none;
+}

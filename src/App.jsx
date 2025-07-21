@@ -2,13 +2,13 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import AppLayout from "./layouts/app-layout";
 import { ThemeProvider } from "./components/theme-provider";
-import { Toaster } from 'sonner';
+import { Toaster } from "sonner";
 
 // ✅ Pages that are implemented
 import HomePage from "./pages/home";
 import TalentProfilePage from "./pages/talent-profile";
 import AddTalent from "./pages/add-talent";
-
+import BriefPage from "./pages/brief-page";
 // ⏳ Coming Soon - Commented for progress clarity
 // import SubmitBriefPage from "./pages/submit-brief";
 // import MatchResultsPage from "./pages/match-results";
@@ -37,10 +37,10 @@ const router = createBrowserRouter([
         path: "/talent-listing",
         element: <TalentListing />,
       },
-      // {
-      //   path: "/matches",
-      //   element: <MatchResultsPage />,
-      // },
+      {
+        path: "/submit-brief",
+        element: <BriefPage />,
+      },
       // {
       //   path: "/feedback/:matchId",
       //   element: <FeedbackPage />,
@@ -51,7 +51,6 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Toaster position="top-center" richColors />
       <RouterProvider router={router} />
