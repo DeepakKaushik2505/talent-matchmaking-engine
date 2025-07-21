@@ -1,4 +1,3 @@
-// src/components/TalentCard.jsx
 import React, { useState } from "react";
 import { Heart, Heart as HeartFill } from "lucide-react";
 import {
@@ -43,6 +42,9 @@ const TalentCard = ({ data }) => {
 
           <p className="text-xs text-muted-foreground mt-1">
             <strong>Availability:</strong> {data.availability}
+          </p>
+          <p className="text-xs text-muted-foreground mt-1">
+            <strong>Budget:</strong> ₹{data.budget}k
           </p>
         </div>
 

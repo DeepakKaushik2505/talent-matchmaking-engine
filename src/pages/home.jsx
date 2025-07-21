@@ -20,12 +20,12 @@ const HomePage = () => {
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight">
           Talent Matchmaking Engine <br />
           <span className="text-indigo-600">
-            Find top-matched creators with clear scores and rationale.
+            Find top-matched creators with clear scores and rationale
           </span>
         </h1>
         <p className="mt-6 text-lg text-gray-500 max-w-xl mx-auto">
           Submit your brief and get matched with top talent, complete with match
-          scores and rationale.
+          scores and rationale
         </p>
       </section>
 

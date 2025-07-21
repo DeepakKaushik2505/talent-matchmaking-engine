@@ -23,52 +23,46 @@ const TalentListing = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [location, setLocation] = useState("");
   const [skill, setSkill] = useState("");
-  const [budget, setBudget] = useState([0, 100]);
-
-  // Hold full talents list once loaded from zustand
-  const [allTalents, setAllTalents] = useState([]);
+  const [budget, setBudget] = useState([0, 200]);
 
   // Filtered talents to show on UI
-  const [filteredTalents, setFilteredTalents] = useState([]);
+  const [filteredTalents, setFilteredTalents] = useState(talents);
 
-  // Fetch talents from zustand and store them locally
+  // Apply filters whenever any filter changes or talents update
   useEffect(() => {
-    setAllTalents(talents);
-  }, [talents]);
+    let result = talents;
 
-  // Filter logic — only filter if any filter/search is applied
-  useEffect(() => {
-    const noFiltersApplied =
-      !searchQuery && !location && !skill && budget[0] === 0 && budget[1] === 100;
-
-    if (noFiltersApplied) {
-      // Show all talents if no filter is applied
-      setFilteredTalents(allTalents);
-      return;
+    // Apply search filter
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      result = result.filter(talent => 
+        talent.name.toLowerCase().includes(query) ||
+        talent.skills.some(s => s.toLowerCase().includes(query))
+      );
     }
 
-    // Otherwise filter
-    const filtered = allTalents.filter((talent) => {
-      const matchesSearch =
-        talent.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        talent.skills.some((s) =>
-          s.toLowerCase().includes(searchQuery.toLowerCase())
-        );
+    // Apply location filter
+    if (location) {
+      result = result.filter(talent => talent.city === location);
+    }
 
-      const matchesLocation = location ? talent.city === location : true;
-      const matchesSkill = skill
-        ? talent.skills.map((s) => s.toLowerCase()).includes(skill.toLowerCase())
-        : true;
+    // Apply skill filter
+    if (skill) {
+      result = result.filter(talent => 
+        talent.skills.map(s => s.toLowerCase()).includes(skill.toLowerCase())
+      );
+    }
 
-      const matchesBudget =
-        parseInt(talent.budget) >= budget[0] &&
-        parseInt(talent.budget) <= budget[1];
+    // Apply budget filter
+    if (budget[0] !== 0 || budget[1] !== 200) {
+      result = result.filter(talent => {
+        const talentBudget = parseInt(talent.budget);
+        return talentBudget >= budget[0] && talentBudget <= budget[1];
+      });
+    }
 
-      return matchesSearch && matchesLocation && matchesSkill && matchesBudget;
-    });
-
-    setFilteredTalents(filtered);
-  }, [allTalents, searchQuery, location, skill, budget]);
+    setFilteredTalents(result);
+  }, [talents, searchQuery, location, skill, budget]);
 
   const onSearch = (e) => {
     e.preventDefault();
@@ -80,7 +74,7 @@ const TalentListing = () => {
     setSearchQuery("");
     setLocation("");
     setSkill("");
-    setBudget([0, 100]);
+    setBudget([0, 200]);
   };
 
   return (
@@ -102,7 +96,7 @@ const TalentListing = () => {
       <div className="flex flex-wrap gap-4 items-center mb-8">
         {/* Location Filter */}
         <Select value={location} onValueChange={setLocation}>
-          <SelectTrigger>
+          <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Filter by Location" />
           </SelectTrigger>
           <SelectContent>
@@ -118,7 +112,7 @@ const TalentListing = () => {
 
         {/* Skill Filter */}
         <Select value={skill} onValueChange={setSkill}>
-          <SelectTrigger>
+          <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Filter by Skill" />
           </SelectTrigger>
           <SelectContent>
@@ -159,7 +153,7 @@ const TalentListing = () => {
             <TalentCard key={talent.id} data={talent} />
           ))
         ) : (
-          <p className="text-center col-span-full">No talents found.</p>
+          <p className="text-center col-span-full">No talents found. Try adjusting your filters.</p>
         )}
       </div>
     </div>
