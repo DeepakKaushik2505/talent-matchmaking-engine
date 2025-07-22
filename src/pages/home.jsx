@@ -15,7 +15,6 @@ import Autoplay from "embla-carousel-autoplay";
 const HomePage = () => {
   return (
     <main className="flex flex-col items-center gap-16 py-20 px-4 max-w-6xl mx-auto text-center">
-      {/* Hero Section */}
       <section>
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight">
           Talent Matchmaking Engine <br />
@@ -29,7 +28,6 @@ const HomePage = () => {
         </p>
       </section>
 
-      {/* CTA Buttons */}
       <section className="flex gap-8 justify-center">
         <Link to="/submit-brief">
           <Button className="fancy-button" size="lg" variant="indigo">
@@ -43,7 +41,6 @@ const HomePage = () => {
         </Link>
       </section>
 
-      {/* Talent Carousel */}
       <section className="w-full max-w-7xl">
         <h2 className="text-2xl font-semibold mb-6 text-left">
           Featured Talent

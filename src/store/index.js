@@ -1,19 +1,22 @@
 // src/store/useTalentStore.js
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 export const useTalentStore = create(
   persist(
     (set, get) => ({
-      talents: [], // Empty array by default
+      talents: [],
 
       addTalent: (newTalent) =>
         set((state) => ({
-          talents: [...state.talents, {
-            ...newTalent,
-            id: Date.now().toString(), // Auto-generate ID
-            budget: newTalent.budget || '0' // Ensure budget exists
-          }],
+          talents: [
+            ...state.talents,
+            {
+              ...newTalent,
+              id: Date.now().toString(),
+              budget: newTalent.budget || "0",
+            },
+          ],
         })),
 
       getTalentById: (id) => {
@@ -21,7 +24,7 @@ export const useTalentStore = create(
       },
     }),
     {
-      name: 'talent-store',
+      name: "talent-store",
       getStorage: () => localStorage,
     }
   )

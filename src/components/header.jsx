@@ -12,7 +12,7 @@ const Header = () => {
 
         <div className="flex gap-8">
 
-          {/* Updated to redirect to add-talent page */}
+         
           <Link to="/add-talent">
             <Button variant="destructive" className="rounded-full">
               <PenBox size={20} className="mr-2" />

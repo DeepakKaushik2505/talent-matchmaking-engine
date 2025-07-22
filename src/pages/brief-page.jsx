@@ -7,9 +7,8 @@ const BriefPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // For now, just redirect to home
+
     navigate("/");
-    // TODO: Add actual brief submission logic later
   };
 
   return (

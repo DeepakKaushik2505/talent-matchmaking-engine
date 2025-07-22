@@ -13,48 +13,63 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { useTalentStore } from "@/store";
 
-const SKILL_OPTIONS = ["React", "Node.js", "UI/UX", "Python", "Figma", "Java"];
-const LOCATION_OPTIONS = ["New York", "Mumbai", "London", "Delhi"];
+const SKILL_OPTIONS = [
+  "Photography",
+  "Videography",
+  "Dance",
+  "Visual Art",
+  "Fitness",
+  "Voice Over",
+  "Music",
+  "Writing",
+  "Design",
+  "Development",
+];
+const LOCATION_OPTIONS = [
+  "Noida",
+  "Mumbai",
+  "Kolkata",
+  "Delhi",
+  "Bangalore",
+  "Chennai",
+  "Hyderabad",
+  "Pune",
+  "Ahmedabad",
+  "Jaipur",
+];
 
 const TalentListing = () => {
   const talents = useTalentStore((state) => state.talents);
 
-  // Filters state
   const [searchQuery, setSearchQuery] = useState("");
   const [location, setLocation] = useState("");
   const [skill, setSkill] = useState("");
   const [budget, setBudget] = useState([0, 200]);
 
-  // Filtered talents to show on UI
   const [filteredTalents, setFilteredTalents] = useState(talents);
 
-  // Apply filters whenever any filter changes or talents update
   useEffect(() => {
     let result = [...talents];
 
-    // Apply search filter (name only, case-insensitive)
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
-      result = result.filter(talent => 
+      result = result.filter((talent) =>
         talent.name.toLowerCase().includes(query)
       );
     }
 
-    // Apply location filter
     if (location) {
-      result = result.filter(talent => talent.city === location);
+      result = result.filter((talent) => talent.city === location);
     }
 
-    // Apply skill filter
     if (skill) {
-      result = result.filter(talent => 
-        talent.skills.map(s => s.toLowerCase()).includes(skill.toLowerCase())
+      result = result.filter((talent) =>
+        talent.skills.map((s) => s.toLowerCase()).includes(skill.toLowerCase())
       );
     }
 
-    // Apply budget filter
     if (budget[0] !== 0 || budget[1] !== 200) {
-      result = result.filter(talent => {
+      result = result.filter((talent) => {
         const talentBudget = parseInt(talent.budget);
         return talentBudget >= budget[0] && talentBudget <= budget[1];
       });
@@ -74,7 +89,7 @@ const TalentListing = () => {
     setLocation("");
     setSkill("");
     setBudget([0, 200]);
-    // Reset the search input field
+
     document.getElementById("search-query").value = "";
   };
 
@@ -82,7 +97,6 @@ const TalentListing = () => {
     <div className="px-6 pt-8 max-w-[1500px] mx-auto">
       <h1 className="text-4xl font-bold text-center mb-8">Find Talent</h1>
 
-      {/* Search Bar */}
       <form onSubmit={handleSearch} className="flex gap-2 mb-6">
         <Input
           id="search-query"
@@ -93,9 +107,7 @@ const TalentListing = () => {
         <Button type="submit">Search</Button>
       </form>
 
-      {/* Filters */}
       <div className="flex flex-wrap gap-4 items-center mb-8">
-        {/* Location Filter */}
         <Select value={location} onValueChange={setLocation}>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Filter by Location" />
@@ -111,7 +123,6 @@ const TalentListing = () => {
           </SelectContent>
         </Select>
 
-        {/* Skill Filter */}
         <Select value={skill} onValueChange={setSkill}>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Filter by Skill" />
@@ -127,7 +138,6 @@ const TalentListing = () => {
           </SelectContent>
         </Select>
 
-        {/* Budget Filter */}
         <div className="flex-1 min-w-[250px]">
           <p className="text-sm mb-2">
             Budget: ₹{budget[0]}k – ₹{budget[1]}k
@@ -147,7 +157,6 @@ const TalentListing = () => {
         </Button>
       </div>
 
-      {/* Talent Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredTalents.length > 0 ? (
           filteredTalents.map((talent) => (
@@ -155,8 +164,8 @@ const TalentListing = () => {
           ))
         ) : (
           <p className="text-center col-span-full">
-            {talents.length === 0 
-              ? "No talents added yet. Add some talents first!" 
+            {talents.length === 0
+              ? "No talents added yet. Add some talents first!"
               : "No talents match your filters. Try adjusting your search."}
           </p>
         )}
