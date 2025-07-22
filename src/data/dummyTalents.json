@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "Priya Sharma",
+    "city": "Delhi",
+    "skills": ["Photography", "Design"],
+    "budget": "75",
+    "availability": "Full-time"
+  },
+  {
+    "id": "2",
+    "name": "Rahul Verma",
+    "city": "Mumbai",
+    "skills": ["Videography", "Editing"],
+    "budget": "120",
+    "availability": "Part-time"
+  },
+  {
+    "id": "3",
+    "name": "Anjali Singh",
+    "city": "Kolkata",
+    "skills": ["Dance", "Music"],
+    "budget": "90",
+    "availability": "Project-based"
+  },
+  {
+    "id": "4",
+    "name": "Amit Patel",
+    "city": "Bangalore",
+    "skills": ["Development", "UI/UX"],
+    "budget": "180",
+    "availability": "Full-time"
+  },
+  {
+    "id": "5",
+    "name": "Sneha Gupta",
+    "city": "Delhi",
+    "skills": ["Writing", "Voice Over"],
+    "budget": "60",
+    "availability": "Freelance"
+  }
+]

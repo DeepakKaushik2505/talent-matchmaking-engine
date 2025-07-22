@@ -4,15 +4,10 @@ import AppLayout from "./layouts/app-layout";
 import { ThemeProvider } from "./components/theme-provider";
 import { Toaster } from "sonner";
 
-// ✅ Pages that are implemented
 import HomePage from "./pages/home";
 import TalentProfilePage from "./pages/talent-profile";
 import AddTalent from "./pages/add-talent";
 import BriefPage from "./pages/brief-page";
-// ⏳ Coming Soon - Commented for progress clarity
-// import SubmitBriefPage from "./pages/submit-brief";
-// import MatchResultsPage from "./pages/match-results";
-// import FeedbackPage from "./pages/feedback";
 
 import "./App.css";
 import TalentListing from "./pages/talent-listing";
@@ -41,10 +36,6 @@ const router = createBrowserRouter([
         path: "/submit-brief",
         element: <BriefPage />,
       },
-      // {
-      //   path: "/feedback/:matchId",
-      //   element: <FeedbackPage />,
-      // },
     ],
   },
 ]);

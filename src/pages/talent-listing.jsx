@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import TalentCard from "@/components/talent-card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { useTalentStore } from "@/store";
+import dummyTalentsData from "@/data/dummyTalents.json";
 
 const SKILL_OPTIONS = [
   "Photography",
@@ -40,13 +41,23 @@ const LOCATION_OPTIONS = [
 
 const TalentListing = () => {
   const talents = useTalentStore((state) => state.talents);
+  const addTalent = useTalentStore((state) => state.addTalent);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [location, setLocation] = useState("");
   const [skill, setSkill] = useState("");
   const [budget, setBudget] = useState([0, 200]);
 
-  const [filteredTalents, setFilteredTalents] = useState(talents);
+  const [filteredTalents, setFilteredTalents] = useState([]);
+
+  const hasLoadedDummyData = useRef(false);
+
+  useEffect(() => {
+    if (talents.length === 0 && !hasLoadedDummyData.current) {
+      dummyTalentsData.forEach((talent) => addTalent(talent));
+      hasLoadedDummyData.current = true;
+    }
+  }, [talents.length, addTalent]);
 
   useEffect(() => {
     let result = [...talents];
@@ -59,12 +70,16 @@ const TalentListing = () => {
     }
 
     if (location) {
-      result = result.filter((talent) => talent.city === location);
+      const selectedLocation = location.toLowerCase();
+      result = result.filter(
+        (talent) => talent.city.toLowerCase() === selectedLocation
+      );
     }
 
     if (skill) {
+      const selectedSkill = skill.toLowerCase();
       result = result.filter((talent) =>
-        talent.skills.map((s) => s.toLowerCase()).includes(skill.toLowerCase())
+        talent.skills.map((s) => s.toLowerCase()).includes(selectedSkill)
       );
     }
 
@@ -164,8 +179,8 @@ const TalentListing = () => {
           ))
         ) : (
           <p className="text-center col-span-full">
-            {talents.length === 0
-              ? "No talents added yet. Add some talents first!"
+            {talents.length === 0 && !hasLoadedDummyData.current
+              ? "No talents added yet. Adding some dummy talents now!"
               : "No talents match your filters. Try adjusting your search."}
           </p>
         )}
