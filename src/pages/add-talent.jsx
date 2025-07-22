@@ -21,7 +21,7 @@ const AddTalent = () => {
       description: `${newTalent.name} has been added to your talent pool.`,
       action: {
         label: 'View Talents',
-        onClick: () => (window.location.href = '/talent-list'),
+        onClick: () => (window.location.href = '/talent-listing'),
       },
     });
   };

@@ -7,7 +7,7 @@
     "availability": "Available from 25 July 2025",
     "budget": "₹15,000 - ₹30,000",
     "phone": "+91 98765 43210",
-    "image": "/public/pics/ananya.png"
+    "image": "pics/ananya.png"
   },
   {
     "id": "talent_2",
@@ -17,7 +17,7 @@
     "availability": "Available Now",
     "budget": "₹10,000 - ₹20,000",
     "phone": "+91 91234 56789",
-    "image": "/public/pics/rohan.png"
+    "image": "pics/rohan.png"
   },
   {
     "id": "talent_3",
@@ -27,7 +27,7 @@
     "availability": "Available from 1 August",
     "budget": "₹8,000 - ₹25,000",
     "phone": "+91 99887 76655",
-    "image": "/public/pics/priya.png"
+    "image": "pics/priya.png"
   },
   {
     "id": "talent_4",
@@ -37,7 +37,7 @@
     "availability": "Available Now",
     "budget": "₹20,000 - ₹50,000",
     "phone": "+91 98456 12345",
-    "image": "/public/pics/rohan.png"
+    "image": "pics/rohan.png"
   },
   {
     "id": "talent_5",
@@ -47,7 +47,7 @@
     "availability": "Available from 5 August",
     "budget": "₹12,000 - ₹18,000",
     "phone": "+91 98111 22444",
-    "image": "/public/pics/meera.png"
+    "image": "pics/meera.png"
   },
   {
     "id": "talent_6",
@@ -57,7 +57,7 @@
     "availability": "Available Now",
     "budget": "₹15,000 - ₹35,000",
     "phone": "+91 90000 11122",
-    "image": "/public/pics/rohan.png"
+    "image": "pics/rohan.png"
   },
   {
     "id": "talent_7",
@@ -67,7 +67,7 @@
     "availability": "Available mid-August",
     "budget": "₹10,000 - ₹28,000",
     "phone": "+91 90999 88877",
-    "image": "/public/pics/sneha.png"
+    "image": "pics/sneha.png"
   },
   {
     "id": "talent_8",
@@ -77,7 +77,7 @@
     "availability": "Available from 30 July",
     "budget": "₹5,000 - ₹12,000",
     "phone": "+91 91234 55555",
-    "image": "/public/pics/rohan.png"
+    "image": "pics/rohan.png"
   },
   {
     "id": "talent_9",
@@ -87,7 +87,7 @@
     "availability": "Available Now",
     "budget": "₹9,000 - ₹19,000",
     "phone": "+91 97777 12345",
-    "image": "/public/pics/tanya.png"
+    "image": "pics/tanya.png"
   },
   {
     "id": "talent_10",
@@ -97,7 +97,7 @@
     "availability": "Available from 10 August",
     "budget": "₹7,000 - ₹16,000",
     "phone": "+91 94321 11111",
-    "image": "/public/pics/rohan.png"
+    "image": "pics/rohan.png"
   },
   {
     "id": "talent_11",
@@ -107,7 +107,7 @@
     "availability": "Available Now",
     "budget": "₹6,000 - ₹14,000",
     "phone": "+91 93456 22222",
-    "image": "/public/pics/priya.png"
+    "image": "pics/priya.png"
   },
   {
     "id": "talent_12",
@@ -117,7 +117,7 @@
     "availability": "Available Immediately",
     "budget": "₹5,000 - ₹10,000",
     "phone": "+91 90210 45678",
-    "image": "/public/pics/rohan.png"
+    "image": "pics/rohan.png"
   },
   {
     "id": "talent_13",
@@ -127,7 +127,7 @@
     "availability": "Available from 15 August",
     "budget": "₹9,000 - ₹17,000",
     "phone": "+91 90123 76543",
-    "image": "/public/pics/sneha.png"
+    "image": "pics/sneha.png"
   },
   {
     "id": "talent_14",
@@ -137,7 +137,7 @@
     "availability": "Available Now",
     "budget": "₹8,000 - ₹15,000",
     "phone": "+91 94444 33333",
-    "image": "/public/pics/rohan.png"
+    "image": "pics/rohan.png"
   },
   {
     "id": "talent_15",
@@ -147,6 +147,6 @@
     "availability": "Available from 20 July",
     "budget": "₹10,000 - ₹18,000",
     "phone": "+91 91234 99999",
-    "image": "/public/pics/ananya.png"
+    "image": "pics/ananya.png"
   }
 ]
